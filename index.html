@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Recursos Educativos</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f9; color: #333; text-align: center; padding: 50px; }
+        h1 { color: #4a4a4a; }
+        input[type="url"] { width: 60%; padding: 10px; margin: 20px 0; border: 1px solid #ccc; border-radius: 5px; }
+        input[type="submit"] { padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        input[type="submit"]:hover { background-color: #0056b3; }
+        .footer { font-size: 0.8em; color: #777; margin-top: 50px; }
+    </style>
+</head>
+<body>
+    <h1>Portal de Acceso a Recursos Digitales</h1>
+    <p>Introduce la URL del recurso educativo al que deseas acceder:</p>
+    <form action="https://proxysite.com/includes/process.php?action=update" method="POST" target="_blank">
+        <input type="hidden" name="u" id="u" value="">
+        <input type="url" id="urlInput" placeholder="https://venice.ai" required>
+        <br>
+        <input type="submit" value="Acceder al Recurso">
+    </form>
+    <div class="footer">
+        <p>Proyecto estudiantil para el acceso libre a la información. 2026</p>
+    </div>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function(e) {
+            const url = document.getElementById('urlInput').value;
+            document.getElementById('u').value = url;
+        });
+    </script>
+</body>
+</html>
